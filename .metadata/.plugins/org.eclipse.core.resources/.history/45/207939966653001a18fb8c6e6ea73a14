@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Principal {
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Menu();
+
+	}
+	
+	public static void Menu() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("--- Menu ---\n"+
+						   "1. Secuencial\n"+
+						   "2. Condicional if\n"+
+						   "3. Condicional 2.0\n"+
+						   "4. Condicional Switch\n"+
+						   "5. While\n"+
+						   "6. Do while\n"+
+						   "7. For\n"+
+						   "8. Arreglo simple\n"+
+						   "9. Arreglo Bidimensional\n"+
+						   "10. Salir\n"
+				);
+		int sel = sc.nextInt();
+		Seleccion(sel);
+		sc.close();
+	}
+	public static void Seleccion(int sel) {
+		
+	}
+
+}

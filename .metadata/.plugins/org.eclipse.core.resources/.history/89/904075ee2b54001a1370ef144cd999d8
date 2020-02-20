@@ -1,0 +1,96 @@
+import java.util.Scanner;
+public class Menu {
+	
+	public static Scanner sc = new Scanner(System.in);
+	public static Usuarios usr = new Usuarios();
+	public static ConsultaVuelos cv = new ConsultaVuelos();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Menuu();
+	}
+	
+	public static void Menuu(){
+		String num = "0";
+		
+		System.out.println("¡BIENVENIDO AL SISTEMA DE REGISTRO DE VUELOS!\n"+
+		"\nNuestros servicios son:\n"+
+				"- Consulta de vuelos.\r\n" + 
+				"- Reserva de vuelos.\r\n" + 
+				"- Compra de billetes.\n"+
+				"-------------------\n"+
+				"1. Registrarse\n2. Ingresar"
+				);
+		
+		do {	
+		System.out.println("-------------------");
+		
+		num = sc.next();
+		
+		
+		try {
+			
+		if(Integer.parseInt(num)<1 || Integer.parseInt(num)>2) {System.out.println("¡Error, ingrese nuevamente!");}
+		
+		}catch(Exception e) 
+		{
+			System.out.println("¡Error, ingrese nuevamente!");
+			num = "0";
+		}
+		}while(Integer.parseInt(num)<1 || Integer.parseInt(num)>2);
+		
+		
+		
+		
+		Seleccion(Integer.parseInt(num));
+		
+	}
+	
+	public static void Seleccion(int sel) {
+		String correo = "";
+		String contra = "";
+		int op = 0;
+		
+		if(sel == 1) {
+		usr.RegistrarUser();
+		Menuu();
+		}
+		if(sel == 2) {
+			System.out.println("Ingrese correo:");
+			correo = sc.next();
+			System.out.println("Ingrese contraseña:");
+			contra = sc.next();
+			
+			try {
+				
+				if(usr.ValidarUser(correo, contra) == true) {
+					System.out.println("¡Usuario validado con exito!");
+					
+					do {
+					System.out.println("\nNuestros servicios son:\n"+
+									"1. Consulta de vuelos.\r\n" + 
+									"2. Reserva de vuelos.\r\n" + 
+									"3. Compra de billetes.\n"+
+									"-------------------");
+					op = sc.nextInt();
+					}while(op<1 || op >3);
+					switch(op) {
+					case 1: cv.tarifas();
+					}
+					
+				}else {
+					System.out.println("¡Usuario no valido!");
+					Menuu();
+
+				}
+				
+			}catch(Exception e){
+				System.out.println("¡Intente nuevamente!");
+				Menuu();
+			}
+		
+		
+		}
+	}
+
+}

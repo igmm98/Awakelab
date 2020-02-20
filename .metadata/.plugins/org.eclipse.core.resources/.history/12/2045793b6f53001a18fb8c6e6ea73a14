@@ -1,0 +1,14 @@
+
+public class Menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Menuu();
+	}
+	
+	public static void Menuu(){
+		
+		System.out.println("¡BIENVENIDO AL SISTEMA DE REGISTRO DE VUELOS!\n");
+	}
+
+}

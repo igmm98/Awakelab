@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Menu {
+	
+	public static Scanner sc = new Scanner(System.in);
+	public static Usuarios usr = new Usuarios();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Menuu();
+	}
+	
+	public static void Menuu(){
+		int num = 0;
+		
+		System.out.println("¡BIENVENIDO AL SISTEMA DE REGISTRO DE VUELOS!\n"+
+		"\nNuestros servicios son:\n"+
+				"- Consulta de vuelos.\r\n" + 
+				"- Reserva de vuelos.\r\n" + 
+				"- Compra de billetes.\n"+
+				"-------------------\n"+
+				"1. Registrarse\n2. Ingresar\n"+
+				"-------------------");
+		do {
+		num = sc.nextInt();
+		if(num<1 || num>2) {System.out.println("¡Error, ingrese nuevamente!");}
+		}while(num<1 || num>2);
+		Seleccion(num);
+		
+	}
+	
+	public static void Seleccion(int sel) {
+		String correo = "";
+		String contra = "";
+		
+		if(sel == 1) {
+		usr.RegistrarUser();
+		Menuu();
+		}
+		if(sel == 2) {
+			System.out.println("Ingrese correo:");
+			correo = sc.next();
+			System.out.println("Ingrese contraseña:");
+			contra = sc.next();
+			
+		usr.VerUser();
+		Menuu();
+		}
+	}
+
+}

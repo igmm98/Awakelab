@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class ConsultaVuelos {
+	
+	private Scanner sc = new Scanner(System.in);
+	
+	public void tarifas(){
+		Scanner sc = new Scanner(System.in);
+		
+		String[][] tarifas = {{"Primera Clase", "100.000"},{"Clase Ejecutiva", "60.000"}, {"Clase Económica", "40.000"}};
+		
+		System.out.println("Tarifas Disponibles");
+		System.out.println("--------------------");
+		
+		for(int i=0;i<3;i++) {
+				System.out.print(tarifas[i][0] + " "+ tarifas[i][1]);
+		}
+		System.out.println("--------------------");
+		String seleccion = "";
+		System.out.println("¿En qué tarifa desea viajar?");
+		System.out.println("Ingrese 1 para primera clase");
+		System.out.println("Ingrese 2 para ejecutiva");
+		System.out.println("Ingrese 3 para económica");
+		seleccion = sc.next();
+		switch (seleccion){
+		case "1":
+			 System.out.println("Elegiste primera clase");
+			break;
+		case "2":
+			System.out.println("Elegiste ejecutiva");
+			break;
+		case "3":
+			System.out.println("Elegiste económica");
+			break;
+		default:
+		  System.out.println("Intente con otro número");
+		} 
+		sc.close();
+	}
+
+	
+	public void informacion() {
+		
+		String opcion = "";
+		
+		
+		System.out.println("Ingrese informacion de Vuelo");
+		System.out.println("Si el vuelo es nacional - opcion 1");
+		System.out.println("Si el vuelo es internacion - opcion 2");
+		
+		opcion = sc.next();
+		switch(opcion){
+			case "1":
+				System.out.println("El vuelo se encuentra retrasado");
+				break;
+			case "2":
+				System.out.println("Pasajero con CORONAVIRUS");
+				break;
+			case "3":
+				System.out.println("Intente nuevamente.. dedos gordos");
+				break;
+		}
+	}
+
+}

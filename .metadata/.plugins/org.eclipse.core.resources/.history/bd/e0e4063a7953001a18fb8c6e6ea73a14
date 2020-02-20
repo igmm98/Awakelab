@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class ConsultaVuelos {
+	
+	public static void informacion() {
+		
+		String opcion = "";
+		@SuppressWarnings("resource")
+		Scanner viaje = new Scanner(System.in);
+		
+		System.out.println("Ingrese informacion de Vuelo");
+		System.out.println("Si el vuelo es nacional - opcion 1");
+		System.out.println("Si el vuelo es internacion - opcion 2");
+		
+		opcion = viaje.next();
+		switch(opcion){
+			case "1":
+				System.out.println("El vuelo se encuentra retrasado");
+				break;
+			case "2":
+				System.out.println("Pasajero con CORONAVIRUS");
+				break;
+			case "3":
+				System.out.println("Intente nuevamente.. dedos gordos");
+				break;
+		}
+	}
+
+}

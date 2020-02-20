@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Menu {
+	
+	public static Scanner sc = new Scanner(System.in);
+	public static Usuarios usr = new Usuarios();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Menuu();
+	}
+	
+	public static void Menuu(){
+		
+		System.out.println("¡BIENVENIDO AL SISTEMA DE REGISTRO DE VUELOS!\n"+
+		"Nuestros servicios son:\n"+
+				"- Consulta de vuelos.\r\n" + 
+				"- Reserva de vuelos.\r\n" + 
+				"- Compra de billetes.\n"+
+				"-------------------\n"+
+				"1. Registrarse\n2. Ingresar");
+		Seleccion(sc.nextInt());
+		
+	}
+	
+	public static void Seleccion(int sel) {
+		usr.RegistrarUser();
+		usr.VerUser();
+	}
+
+}
